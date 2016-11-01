@@ -3,8 +3,8 @@ require 'nokogiri'
 class Scrapper
   attr_reader :doc
 
-  def initialize
-    @doc = Nokogiri::HTML(file_content)
+  def initialize(doc)
+    @doc = build_nokogiri_document(doc)
   end
 
   def title
@@ -21,7 +21,7 @@ class Scrapper
 
   private
 
-  def file_content
-    File.read('./docs/index.html')
+  def build_nokogiri_document(document)
+    Nokogiri::HTML(document)
   end
 end
