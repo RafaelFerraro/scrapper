@@ -3,7 +3,7 @@ require './lib/scrapper'
 
 describe Scrapper do
   let(:scrapper) do
-    Scrapper.new(File.read('./specs/support/index.html'))
+    Scrapper.new(File.read('./spec/support/index.html'))
   end
 
   describe '#anchor_by' do
